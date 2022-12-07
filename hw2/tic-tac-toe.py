@@ -43,7 +43,6 @@ class Field:
                     self.check_win()
                 except Win as w:
                     f = True
-                    # n = w.args[0]
             else:
                 print("cell is taken")
                 raise IsTaken
@@ -58,25 +57,11 @@ class Field:
                                 self.check_win()
                             except Win as w:
                                 f = True
-                                # n = w.args[0]
                         else:
                             print("cell is taken")
                             raise IsTaken
                     c += 1
         if f:
-            # if n < 3:
-            #     for i in range(3):
-            #         self.field[n][i] = '-'
-            # elif n < 5:
-            #     if n == 3:
-            #         for i in range(3):
-            #             self.field[i][i] = '-'
-            #     elif n == 4:
-            #         for i in range(3):
-            #             self.field[2-i][i] = '-'
-            #     else:
-            #         for i in range(3):
-            #             self.field[i][n-5] = '-'
             print("WIN")
             raise Win
         if self.__check_draw():
